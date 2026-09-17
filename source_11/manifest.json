@@ -1,0 +1,183 @@
+{
+  "generatedAt": "2026-09-17T06:15:38.706Z",
+  "variant": 11,
+  "sourceDir": "source_11",
+  "totalFiles": 29,
+  "totalSize": 8843322,
+  "files": [
+    {
+      "path": "anim.gif",
+      "size": 153600,
+      "ext": ".gif",
+      "modified": "2026-09-17T06:15:38.691Z"
+    },
+    {
+      "path": "app.js",
+      "size": 15360,
+      "ext": ".js",
+      "modified": "2026-09-17T06:15:38.687Z"
+    },
+    {
+      "path": "archive.gif",
+      "size": 1048676,
+      "ext": ".gif",
+      "modified": "2026-09-17T06:15:38.701Z"
+    },
+    {
+      "path": "assets/banner.jpg",
+      "size": 95648,
+      "ext": ".jpg",
+      "modified": "2026-09-17T06:15:38.704Z"
+    },
+    {
+      "path": "assets/bg.gif",
+      "size": 229235,
+      "ext": ".gif",
+      "modified": "2026-09-17T06:15:38.704Z"
+    },
+    {
+      "path": "assets/logo.png",
+      "size": 67486,
+      "ext": ".png",
+      "modified": "2026-09-17T06:15:38.704Z"
+    },
+    {
+      "path": "big_data.txt",
+      "size": 2097652,
+      "ext": ".txt",
+      "modified": "2026-09-17T06:15:38.695Z"
+    },
+    {
+      "path": "changelog.txt",
+      "size": 10240,
+      "ext": ".txt",
+      "modified": "2026-09-17T06:15:38.688Z"
+    },
+    {
+      "path": "config.json",
+      "size": 4096,
+      "ext": ".json",
+      "modified": "2026-09-17T06:15:38.687Z"
+    },
+    {
+      "path": "data.json",
+      "size": 25600,
+      "ext": ".json",
+      "modified": "2026-09-17T06:15:38.688Z"
+    },
+    {
+      "path": "docs/faq.txt",
+      "size": 1592,
+      "ext": ".txt",
+      "modified": "2026-09-17T06:15:38.703Z"
+    },
+    {
+      "path": "docs/guide.txt",
+      "size": 21390,
+      "ext": ".txt",
+      "modified": "2026-09-17T06:15:38.703Z"
+    },
+    {
+      "path": "docs/manual.md",
+      "size": 20930,
+      "ext": ".md",
+      "modified": "2026-09-17T06:15:38.703Z"
+    },
+    {
+      "path": "helper.js",
+      "size": 6144,
+      "ext": ".js",
+      "modified": "2026-09-17T06:15:38.689Z"
+    },
+    {
+      "path": "huge_image.jpg",
+      "size": 3145728,
+      "ext": ".jpg",
+      "modified": "2026-09-17T06:15:38.700Z"
+    },
+    {
+      "path": "icon.png",
+      "size": 81920,
+      "ext": ".png",
+      "modified": "2026-09-17T06:15:38.692Z"
+    },
+    {
+      "path": "index.js",
+      "size": 8192,
+      "ext": ".js",
+      "modified": "2026-09-17T06:15:38.687Z"
+    },
+    {
+      "path": "large_log.txt",
+      "size": 1048776,
+      "ext": ".txt",
+      "modified": "2026-09-17T06:15:38.697Z"
+    },
+    {
+      "path": "log.txt",
+      "size": 30720,
+      "ext": ".txt",
+      "modified": "2026-09-17T06:15:38.688Z"
+    },
+    {
+      "path": "notes.txt",
+      "size": 5120,
+      "ext": ".txt",
+      "modified": "2026-09-17T06:15:38.686Z"
+    },
+    {
+      "path": "package.json",
+      "size": 2048,
+      "ext": ".json",
+      "modified": "2026-09-17T06:15:38.688Z"
+    },
+    {
+      "path": "photo1.jpg",
+      "size": 256000,
+      "ext": ".jpg",
+      "modified": "2026-09-17T06:15:38.690Z"
+    },
+    {
+      "path": "photo2.png",
+      "size": 409600,
+      "ext": ".png",
+      "modified": "2026-09-17T06:15:38.691Z"
+    },
+    {
+      "path": "readme.txt",
+      "size": 2048,
+      "ext": ".txt",
+      "modified": "2026-09-17T06:15:38.686Z"
+    },
+    {
+      "path": "scripts/build.js",
+      "size": 19772,
+      "ext": ".js",
+      "modified": "2026-09-17T06:15:38.703Z"
+    },
+    {
+      "path": "scripts/main.js",
+      "size": 3020,
+      "ext": ".js",
+      "modified": "2026-09-17T06:15:38.703Z"
+    },
+    {
+      "path": "scripts/test.js",
+      "size": 17369,
+      "ext": ".js",
+      "modified": "2026-09-17T06:15:38.704Z"
+    },
+    {
+      "path": "settings.json",
+      "size": 3072,
+      "ext": ".json",
+      "modified": "2026-09-17T06:15:38.689Z"
+    },
+    {
+      "path": "utils.js",
+      "size": 12288,
+      "ext": ".js",
+      "modified": "2026-09-17T06:15:38.687Z"
+    }
+  ]
+}
