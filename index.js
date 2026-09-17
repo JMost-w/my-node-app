@@ -1,200 +1,137 @@
-// Подключаем необходимые модули
-const fs = require('fs').promises; // Используем промисы для асинхронной работы с файлами
-const path = require('path'); // Модуль для работы с путями
-const fsSync = require('fs'); // Синхронный fs для проверки размера файла
+const http = require('http');
+const EventEmitter = require('events');
 
-/**
- * Основная функция программы
- */
-async function main() {
-    try {
-        // Формируем имя файла согласно варианту (11)
-        const variantNumber = 11;
-        const fileName = `student_${variantNumber}.txt`;
-        
-        // Получаем полный путь к файлу относительно текущей директории
-        const filePath = path.join(__dirname, fileName);
-        
-        console.log(`Работаем с файлом: ${filePath}\n`);
-        
-        // 1. Создаем файл и записываем в него информацию
-        await createStudentFile(filePath, variantNumber);
-        
-        // 2. Добавляем строку с количеством записей
-        await appendRecordsCount(filePath);
-        
-        // 3. Читаем файл и выводим содержимое
-        await readAndDisplayFile(filePath);
-        
-    } catch (error) {
-        console.error('Критическая ошибка в работе программы:', error.message);
-        process.exit(1);
+class OrderHandler extends EventEmitter {
+    processOrder(orderId) {
+        this.emit('order:start', orderId);
+
+        setTimeout(() => {
+            this.emit('order:processing', orderId, 'Идёт обработка...');
+
+            setTimeout(() => {
+                const sum = Math.floor(Math.random() * 901) + 100;
+                this.emit('order:complete', orderId, sum);
+            }, 2000);
+        }, 2000);
     }
 }
 
-/**
- * Создает файл и записывает в него начальные данные
- * @param {string} filePath - путь к файлу
- * @param {number} variantNumber - номер варианта
- */
-async function createStudentFile(filePath, variantNumber) {
-    try {
-        // Получаем текущую дату и время в отформатированном виде
-        const now = new Date();
-        const formattedDate = now.toLocaleString('ru-RU', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
+function calculatePi(iterations = 1000000) {
+    let sum = 0;
+    for (let i = 0; i < iterations; i++) {
+        const sign = i % 2 === 0 ? 1 : -1;
+        sum += sign / (2 * i + 1);
+    }
+    return (4 * sum).toFixed(7);
+}
+
+class UserTracker extends EventEmitter {
+    trackAction(userId, action, metadata) {
+        this.emit('user:action', {
+            userId: userId,
+            action: action,
+            timestamp: new Date().toISOString(),
+            metadata: metadata,
+            id: Math.random().toString(36).substr(2, 9)
         });
-        
-        // Список любимых книг/фильмов
-        const favorites = [
-            '1. Мастер и Маргарита (М. Булгаков)',
-            '2. Преступление и наказание (Ф. Достоевский)',
-            '3. Интерстеллар (фильм)',
-            '4. 1984 (Дж. Оруэлл)',
-            '5. Игра престолов (сериал)'
-        ];
-        
-        // Формируем содержимое файла
-        const content = [
-            '========================================',
-            'ИНФОРМАЦИЯ О СТУДЕНТЕ',
-            '========================================',
-            'Фамилия и имя: Мазан Максим',
-            'Номер группы: 401',
-            `Номер варианта: ${variantNumber}`,
-            `Текущая дата и время: ${formattedDate}`,
-            '',
-            'Любимые книги/фильмы:',
-            ...favorites,
-            '========================================'
-        ].join('\n') + '\n';
-        
-        // Записываем данные в файл (флаг 'w' перезаписывает файл)
-        await fs.writeFile(filePath, content, 'utf8');
-        console.log('✓ Файл успешно создан и заполнен начальными данными');
-        
-    } catch (error) {
-        throw new Error(`Ошибка при создании файла "${filePath}": ${error.message}`);
     }
 }
 
-/**
- * Добавляет в конец файла строку с количеством записей
- * @param {string} filePath - путь к файлу
- */
-async function appendRecordsCount(filePath) {
-    try {
-        // Проверяем существование файла перед чтением
-        await checkFileExists(filePath);
-        
-        // Получаем размер файла для определения необходимости использования потоков
-        const stats = await fs.stat(filePath);
-        
-        let lineCount;
-        
-        // Если файл больше 1 МБ — используем поток для подсчета строк
-        if (stats.size > 1024 * 1024) {
-            console.log('Файл больше 1 МБ — используем поток для чтения');
-            lineCount = await countLinesWithStream(filePath);
-        } else {
-            // Для небольших файлов читаем целиком
-            lineCount = await countLines(filePath);
+class AppServer extends EventEmitter {
+    constructor(orderHandler) {
+        super();
+        this.server = null;
+        this.orderHandler = orderHandler;
+    }
+
+    start(port) {
+        this.server = http.createServer((req, res) => {
+            this.emit('request:received', {
+                method: req.method,
+                url: req.url
+            });
+
+            const orderMatch = req.url.match(/^\/order\/(\d+)$/);
+            if (req.method === 'GET' && orderMatch) {
+                const orderId = orderMatch[1];
+                this.orderHandler.processOrder(orderId);
+                res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+                res.end(`Заказ #${orderId} принят в обработку\n`);
+                return;
+            }
+
+            res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+            res.end('Hello from EventEmitter Server!');
+        });
+
+        this.server.listen(port, () => {
+            this.emit('server:started', port);
+        });
+    }
+
+    stop() {
+        if (this.server) {
+            this.server.close(() => {
+                this.emit('server:stopped');
+            });
         }
-        
-        // Формируем строку для добавления
-        const appendContent = `\nКоличество записей: ${lineCount}\n`;
-        
-        // Добавляем строку в конец файла (флаг 'a' — append)
-        await fs.appendFile(filePath, appendContent, 'utf8');
-        console.log(`✓ Добавлена строка "Количество записей: ${lineCount}"\n`);
-        
-    } catch (error) {
-        throw new Error(`Ошибка при добавлении количества записей: ${error.message}`);
     }
 }
 
-/**
- * Подсчитывает количество строк в файле через полное чтение
- * @param {string} filePath - путь к файлу
- * @returns {Promise<number>} количество строк
- */
-async function countLines(filePath) {
-    try {
-        const data = await fs.readFile(filePath, 'utf8');
-        // Разбиваем по переносам строк и считаем непустые строки
-        return data.split(/\r?\n/).filter(line => line.trim().length > 0).length;
-    } catch (error) {
-        throw new Error(`Ошибка при подсчете строк: ${error.message}`);
-    }
-}
+const orderHandler = new OrderHandler();
+const app = new AppServer(orderHandler);
 
-/**
- * Подсчитывает количество строк в файле через поток (для больших файлов)
- * @param {string} filePath - путь к файлу
- * @returns {Promise<number>} количество строк
- */
-function countLinesWithStream(filePath) {
-    return new Promise((resolve, reject) => {
-        let lineCount = 0;
-        let lastChar = '';
-        
-        // Создаем поток чтения файла
-        const stream = fsSync.createReadStream(filePath, { encoding: 'utf8' });
-        
-        // Обрабатываем данные по мере поступления
-        stream.on('data', (chunk) => {
-            for (let i = 0; i < chunk.length; i++) {
-                // Считаем строки по символу \n (учитывая \r\n)
-                if (chunk[i] === '\n' && lastChar !== '\r') {
-                    lineCount++;
-                } else if (chunk[i] === '\n' && lastChar === '\r') {
-                    lineCount++;
-                }
-                lastChar = chunk[i];
-            }
-        });
-        
-        // Завершение потока
-        stream.on('end', () => {
-            // Если файл не заканчивается переносом строки, добавляем последнюю строку
-            if (lastChar !== '\n' && lastChar !== '') {
-                lineCount++;
-            }
-            resolve(lineCount);
-        });
-        
-        // Обработка ошибок потока
-        stream.on('error', (error) => {
-            reject(new Error(`Ошибка потока чтения: ${error.message}`));
-        });
-    });
-}
+orderHandler.on('order:start', (orderId) => {
+    console.log(`[order:start] Заказ #${orderId} начат`);
+});
 
-/**
- * Читает файл и выводит содержимое в консоль в отформатированном виде
- * @param {string} filePath - путь к файлу
- */
-async function readAndDisplayFile(filePath) {
-    try {
-        // Проверяем существование файла
-        await checkFileExists(filePath);
+orderHandler.on('order:processing', (orderId, text) => {
+    console.log(`[order:processing] Заказ #${orderId}: ${text}`);
+});
+
+orderHandler.on('order:complete', (orderId, sum) => {
+    const pi = calculatePi();
+    console.log(`💰 Заказ #${orderId} завершён на сумму ${sum} руб. PI = ${pi}`);
+});
+
+app.on('server:started', (port) => {
+    console.log(`Сервер запущен на порту ${port}`);
+});
+
+app.on('request:received', ({ method, url }) => {
+    console.log(`Получен запрос: ${method} ${url}`);
+});
+
+app.on('server:stopped', () => {
+    console.log('Сервер остановлен');
+});
+
+app.start(3000);
+
+const tracker = new UserTracker();
+
+tracker.on('user:action', (event) => {
+    console.log(`👤 Пользователь ${event.userId} совершил действие "${event.action}"`);
+    console.log(`   Время: ${event.timestamp}`);
+    console.log(`   ID события: ${event.id}`);
+    console.log(`   Доп. данные: ${JSON.stringify(event.metadata)}`);
+});
+
+tracker.trackAction(1, 'login', { ip: '192.168.1.1', browser: 'Chrome' });
+tracker.trackAction(42, 'purchase', { amount: 500, currency: 'BYN' });
+tracker.trackAction(7, 'logout', { reason: 'timeout' });
+const fullName = 'Мазан Максим Борисович';
+const group = '401';
+
+function calculatePiMonteCarlo(points = 1000000) {
+    let inside = 0;
+    
+    for (let i = 0; i < points; i++) {
+        const x = Math.random();
+        const y = Math.random();
         
-        // Получаем размер файла
-        const stats = await fs.stat(filePath);
-        
-        let content;
-        
-        // Для файлов > 1 МБ используем поток
-        if (stats.size > 1024 * 1024) {
-            console.log('Файл больше 1 МБ — читаем через поток\n');
-            content = await readFileWithStream(filePath);
-        } else {
-            content = await fs.readFile(filePath, 'utf8');
+        if (x * x + y * y <= 1) {
+            inside++;
         }
         
         // Выводим отформатированное содержимое
@@ -209,44 +146,25 @@ async function readAndDisplayFile(filePath) {
     } catch (error) {
         throw new Error(`Ошибка при чтении и выводе файла: ${error.message}`);
     }
+    
+    return (inside / points) * 4;
 }
 
-/**
- * Читает файл через поток (для больших файлов)
- * @param {string} filePath - путь к файлу
- * @returns {Promise<string>} содержимое файла
- */
-function readFileWithStream(filePath) {
-    return new Promise((resolve, reject) => {
-        let content = '';
-        
-        const stream = fsSync.createReadStream(filePath, { encoding: 'utf8' });
-        
-        stream.on('data', (chunk) => {
-            content += chunk;
-        });
-        
-        stream.on('end', () => {
-            resolve(content);
-        });
-        
-        stream.on('error', (error) => {
-            reject(new Error(`Ошибка при чтении потока: ${error.message}`));
-        });
-    });
-}
+const pi = calculatePiMonteCarlo();
 
-/**
- * Проверяет существование файла и доступ к нему
- * @param {string} filePath - путь к файлу
- */
-async function checkFileExists(filePath) {
-    try {
-        await fs.access(filePath, fsSync.constants.F_OK | fsSync.constants.R_OK);
-    } catch (error) {
-        throw new Error(`Файл "${filePath}" не существует или недоступен для чтения`);
-    }
-}
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    
+    res.end(`
+        <h1>${fullName}</h1>
+        <h2>Группа: ${group}</h2>
+        <h3>Число Пи (метод Монте-Карло): ${pi}</h3>
+        <p>Номер в журнале: 11</p>
+    `);
+});
 
-// Запускаем программу
-main();
+const PORT = 3000;
+server.listen(PORT, () => {
+    console.log(`Сервер запущен на http://localhost:${PORT}`);
+    console.log(`Число Пи (Монте-Карло): ${pi}`);
+});
