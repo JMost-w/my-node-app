@@ -1,0 +1,175 @@
+{
+  "analyzedDirectory": "/Users/maxim/my-node-app",
+  "variant": 11,
+  "allowedExtensions": [
+    ".js",
+    ".json",
+    ".txt",
+    ".md"
+  ],
+  "generatedAt": "2026-09-17T06:13:14.729Z",
+  "summary": {
+    "totalFiles": 12,
+    "totalFolders": 68,
+    "totalSizeBytes": 31409,
+    "totalSizeKB": 30.67,
+    "totalSizeMB": 0.03
+  },
+  "extensions": [
+    {
+      "ext": ".js",
+      "count": 3,
+      "size": 29758
+    },
+    {
+      "ext": ".txt",
+      "count": 8,
+      "size": 1404
+    },
+    {
+      "ext": ".json",
+      "count": 1,
+      "size": 247
+    }
+  ],
+  "topBiggest": [
+    {
+      "name": "index.js",
+      "size": 10996,
+      "path": "index.js"
+    },
+    {
+      "name": "task3.js",
+      "size": 9672,
+      "path": "task3.js"
+    },
+    {
+      "name": "task2.js",
+      "size": 9090,
+      "path": "task2.js"
+    },
+    {
+      "name": "student_11.txt",
+      "size": 673,
+      "path": "student_11.txt"
+    },
+    {
+      "name": "package.json",
+      "size": 247,
+      "path": "package.json"
+    }
+  ],
+  "topSmallest": [
+    {
+      "name": "info.txt",
+      "size": 84,
+      "path": "project_11/data/info.txt"
+    },
+    {
+      "name": "info.txt",
+      "size": 90,
+      "path": "project_11/data/input/info.txt"
+    },
+    {
+      "name": "info.txt",
+      "size": 94,
+      "path": "project_11/src/info.txt"
+    },
+    {
+      "name": "info.txt",
+      "size": 103,
+      "path": "project_11/data/results/info.txt"
+    },
+    {
+      "name": "info.txt",
+      "size": 112,
+      "path": "project_11/src/modules/info.txt"
+    }
+  ],
+  "allFiles": [
+    {
+      "name": "index.js",
+      "path": "index.js",
+      "ext": ".js",
+      "size": 10996,
+      "modified": "2026-09-17T06:04:18.834Z"
+    },
+    {
+      "name": "package.json",
+      "path": "package.json",
+      "ext": ".json",
+      "size": 247,
+      "modified": "2026-09-07T06:03:58.843Z"
+    },
+    {
+      "name": "info.txt",
+      "path": "project_11/data/info.txt",
+      "ext": ".txt",
+      "size": 84,
+      "modified": "2026-09-17T06:10:43.476Z"
+    },
+    {
+      "name": "info.txt",
+      "path": "project_11/data/input/info.txt",
+      "ext": ".txt",
+      "size": 90,
+      "modified": "2026-09-17T06:10:43.476Z"
+    },
+    {
+      "name": "info.txt",
+      "path": "project_11/data/results/info.txt",
+      "ext": ".txt",
+      "size": 103,
+      "modified": "2026-09-17T06:10:43.476Z"
+    },
+    {
+      "name": "info.txt",
+      "path": "project_11/src/components/info.txt",
+      "ext": ".txt",
+      "size": 123,
+      "modified": "2026-09-17T06:10:43.476Z"
+    },
+    {
+      "name": "info.txt",
+      "path": "project_11/src/info.txt",
+      "ext": ".txt",
+      "size": 94,
+      "modified": "2026-09-17T06:10:43.475Z"
+    },
+    {
+      "name": "info.txt",
+      "path": "project_11/src/modules/info.txt",
+      "ext": ".txt",
+      "size": 112,
+      "modified": "2026-09-17T06:10:43.476Z"
+    },
+    {
+      "name": "info.txt",
+      "path": "project_11/src/utils/info.txt",
+      "ext": ".txt",
+      "size": 125,
+      "modified": "2026-09-17T06:10:43.476Z"
+    },
+    {
+      "name": "student_11.txt",
+      "path": "student_11.txt",
+      "ext": ".txt",
+      "size": 673,
+      "modified": "2026-09-17T06:06:20.534Z"
+    },
+    {
+      "name": "task2.js",
+      "path": "task2.js",
+      "ext": ".js",
+      "size": 9090,
+      "modified": "2026-09-17T06:10:28.544Z"
+    },
+    {
+      "name": "task3.js",
+      "path": "task3.js",
+      "ext": ".js",
+      "size": 9672,
+      "modified": "2026-09-17T06:13:05.167Z"
+    }
+  ]
+}

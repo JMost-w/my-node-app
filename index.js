@@ -133,6 +133,18 @@ function calculatePiMonteCarlo(points = 1000000) {
         if (x * x + y * y <= 1) {
             inside++;
         }
+        
+        // Выводим отформатированное содержимое
+        console.log('╔════════════════════════════════════════╗');
+        console.log('║        СОДЕРЖИМОЕ ФАЙЛА               ║');
+        console.log('╚════════════════════════════════════════╝');
+        console.log(content);
+        console.log('╔════════════════════════════════════════╗');
+        console.log('║        КОНЕЦ ФАЙЛА                    ║');
+        console.log('╚════════════════════════════════════════╝');
+        
+    } catch (error) {
+        throw new Error(`Ошибка при чтении и выводе файла: ${error.message}`);
     }
     
     return (inside / points) * 4;
