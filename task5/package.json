@@ -1,0 +1,14 @@
+{
+  "name": "lab15-task5",
+  "version": "1.0.0",
+  "description": "Лабораторная работа №15 — Задание 5: полное REST API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "koa": "^2.15.3",
+    "koa-bodyparser": "^4.4.1",
+    "koa-router": "^12.0.1"
+  }
+}
