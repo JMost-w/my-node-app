@@ -1,0 +1,57 @@
+[2026-11-25 10:28:51] [INFO] Сервер запущен {"port":3000}
+[2026-11-25 10:29:02] [INFO] HTTP {"method":"GET","url":"/","status":200,"durationMs":62,"ip":"::1"}
+[2026-11-25 10:29:03] [INFO] HTTP {"method":"GET","url":"/style.css","status":200,"durationMs":6,"ip":"::1"}
+[2026-11-25 10:29:07] [ERROR] Ошибка {"status":503,"method":"GET","url":"/async-error","message":"Тестовая асинхронная ошибка","stack":"Error: Тестовая асинхронная ошибка\n    at Timeout._onTimeout (/Users/maxim/my-node-app/laba16/task1/server.js:159:33)\n    at listOnTimeout (node:internal/timers:685:17)\n    at process.processTimers (node:internal/timers:618:7)"}
+[2026-11-25 10:29:07] [INFO] HTTP {"method":"GET","url":"/async-error","status":503,"durationMs":317,"ip":"::1"}
+[2026-11-25 10:29:07] [INFO] HTTP {"method":"GET","url":"/style.css","status":304,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:29:08] [INFO] HTTP {"method":"GET","url":"/","status":200,"durationMs":2,"ip":"::1"}
+[2026-11-25 10:29:08] [INFO] HTTP {"method":"GET","url":"/style.css","status":304,"durationMs":0,"ip":"::1"}
+[2026-11-25 10:29:08] [ERROR] Ошибка {"status":404,"method":"GET","url":"/favicon.ico","message":"Маршрут GET /favicon.ico не найден"}
+[2026-11-25 10:29:08] [INFO] HTTP {"method":"GET","url":"/favicon.ico","status":404,"durationMs":2,"ip":"::1"}
+[2026-11-25 10:29:09] [INFO] HTTP {"method":"GET","url":"/style.css","status":304,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:29:28] [INFO] Сервер запущен {"port":3000}
+[2026-11-25 10:29:30] [INFO] HTTP {"method":"GET","url":"/","status":200,"durationMs":61,"ip":"::1"}
+[2026-11-25 10:29:30] [INFO] HTTP {"method":"GET","url":"/style.css","status":304,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:30:21] [INFO] HTTP {"method":"GET","url":"/api/books","status":200,"durationMs":7,"ip":"::1"}
+[2026-11-25 10:30:21] [INFO] HTTP {"method":"GET","url":"/api/books?year=1869","status":200,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:30:21] [INFO] HTTP {"method":"GET","url":"/api/books?yearFrom=1800&yearTo=1900","status":200,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:30:21] [INFO] HTTP {"method":"GET","url":"/api/books?sort=title","status":200,"durationMs":8,"ip":"::1"}
+[2026-11-25 10:30:21] [INFO] HTTP {"method":"GET","url":"/api/books?sort=-year","status":200,"durationMs":0,"ip":"::1"}
+[2026-11-25 10:30:21] [INFO] HTTP {"method":"GET","url":"/api/books?limit=5&page=2","status":200,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:30:42] [INFO] HTTP {"method":"GET","url":"/api/books","status":200,"durationMs":2,"ip":"::1"}
+[2026-11-25 10:30:57] [INFO] HTTP {"method":"GET","url":"/api/books","status":200,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:36:10] [INFO] Сервер запущен {"port":3000}
+[2026-11-25 10:36:14] [INFO] HTTP {"method":"GET","url":"/","status":200,"durationMs":57,"ip":"::1"}
+[2026-11-25 10:36:14] [INFO] HTTP {"method":"GET","url":"/style.css","status":304,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:37:31] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/login","message":"Маршрут POST /auth/login не найден"}
+[2026-11-25 10:37:31] [INFO] HTTP {"method":"POST","url":"/auth/login","status":404,"durationMs":56,"ip":"::1"}
+[2026-11-25 10:37:31] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/register","message":"Маршрут POST /auth/register не найден"}
+[2026-11-25 10:37:31] [INFO] HTTP {"method":"POST","url":"/auth/register","status":404,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:37:31] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/login","message":"Маршрут POST /auth/login не найден"}
+[2026-11-25 10:37:31] [INFO] HTTP {"method":"POST","url":"/auth/login","status":404,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:37:44] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/login","message":"Маршрут POST /auth/login не найден"}
+[2026-11-25 10:37:44] [INFO] HTTP {"method":"POST","url":"/auth/login","status":404,"durationMs":6,"ip":"::1"}
+[2026-11-25 10:37:44] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/register","message":"Маршрут POST /auth/register не найден"}
+[2026-11-25 10:37:44] [INFO] HTTP {"method":"POST","url":"/auth/register","status":404,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:37:44] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/login","message":"Маршрут POST /auth/login не найден"}
+[2026-11-25 10:37:44] [INFO] HTTP {"method":"POST","url":"/auth/login","status":404,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:38:02] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/register","message":"Маршрут POST /auth/register не найден"}
+[2026-11-25 10:38:02] [INFO] HTTP {"method":"POST","url":"/auth/register","status":404,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:38:25] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/login","message":"Маршрут POST /auth/login не найден"}
+[2026-11-25 10:38:25] [INFO] HTTP {"method":"POST","url":"/auth/login","status":404,"durationMs":1,"ip":"::1"}
+[2026-11-25 10:39:17] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/login","message":"Маршрут POST /auth/login не найден"}
+[2026-11-25 10:39:17] [INFO] HTTP {"method":"POST","url":"/auth/login","status":404,"durationMs":2,"ip":"::1"}
+[2026-11-25 10:39:38] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/login","message":"Маршрут POST /auth/login не найден"}
+[2026-11-25 10:39:38] [INFO] HTTP {"method":"POST","url":"/auth/login","status":404,"durationMs":3,"ip":"::1"}
+[2026-11-25 10:39:58] [INFO] HTTP {"method":"GET","url":"/","status":200,"durationMs":13,"ip":"::1"}
+[2026-11-25 10:40:30] [INFO] Сервер запущен {"port":3000}
+[2026-11-25 10:40:41] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/login","message":"Маршрут POST /auth/login не найден"}
+[2026-11-25 10:40:41] [INFO] HTTP {"method":"POST","url":"/auth/login","status":404,"durationMs":13,"ip":"::1"}
+[2026-11-25 10:41:28] [INFO] HTTP {"method":"GET","url":"/","status":200,"durationMs":69,"ip":"::1"}
+[2026-11-25 10:42:31] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/login","message":"Маршрут POST /auth/login не найден"}
+[2026-11-25 10:42:31] [INFO] HTTP {"method":"POST","url":"/auth/login","status":404,"durationMs":4,"ip":"::1"}
+[2026-11-25 10:43:07] [INFO] HTTP {"method":"GET","url":"/","status":200,"durationMs":8,"ip":"::1"}
+[2026-11-25 10:43:16] [INFO] HTTP {"method":"GET","url":"/api/books/stats","status":200,"durationMs":6,"ip":"::1"}
+[2026-11-25 10:43:37] [ERROR] Ошибка {"status":404,"method":"POST","url":"/auth/login","message":"Маршрут POST /auth/login не найден"}
+[2026-11-25 10:43:37] [INFO] HTTP {"method":"POST","url":"/auth/login","status":404,"durationMs":4,"ip":"::1"}
+[2026-11-25 10:43:46] [INFO] HTTP {"method":"GET","url":"/api/books","status":200,"durationMs":2,"ip":"::1"}
