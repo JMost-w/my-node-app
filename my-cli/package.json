@@ -1,0 +1,32 @@
+{
+  "name": "my-cli",
+  "version": "1.0.0",
+  "description": "Лабораторная работа №17 — полноценное CLI с архитектурой",
+  "main": "bin/cli.js",
+  "bin": {
+    "my-cli": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "test": "jest --coverage",
+    "build": "pkg . --targets node22-macos-arm64 --output dist/my-cli"
+  },
+  "author": "Максим Мазан Борисович, группа 401, БТК",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "@yao-pkg/pkg": "^6.26.0",
+    "jest": "^29.7.0"
+  },
+  "pkg": {
+    "assets": [
+      "services/**/*",
+      "utils/**/*"
+    ],
+    "outputPath": "dist"
+  }
+}

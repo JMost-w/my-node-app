@@ -1,0 +1,10 @@
+{
+  "processedAt": "2025-11-25T12:34:56.789Z",
+  "total": 2,
+  "ok": 1,
+  "missing": 1,
+  "results": [
+    { "file": "a.txt", "status": "ok" },
+    { "file": "missing.txt", "status": "missing" }
+  ]
+}

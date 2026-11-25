@@ -1,0 +1,12 @@
+{
+  "processedAt": "2026-11-25T17:37:28.369Z",
+  "total": 1,
+  "ok": 1,
+  "missing": 0,
+  "results": [
+    {
+      "file": "a.txt",
+      "status": "ok"
+    }
+  ]
+}
