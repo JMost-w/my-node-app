@@ -1,0 +1,11 @@
+{
+  "name": "laba20-advanced",
+  "version": "1.0.0",
+  "description": "Лабораторная работа №20 — продвинутый HTTP-сервер",
+  "main": "http-advanced.js",
+  "scripts": {
+    "start": "node http-advanced.js"
+  },
+  "author": "Максим Мазан Борисович, группа 401, БТК",
+  "license": "MIT"
+}
