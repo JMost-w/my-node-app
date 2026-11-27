@@ -1,0 +1,9 @@
+[2026-11-27 09:32:17] [INFO] HTTP {"method":"GET","url":"/api/books?year=1869","status":200,"durationMs":9,"ip":"::1"}
+[2026-11-27 09:32:17] [INFO] HTTP {"method":"GET","url":"/api/books?yearFrom=1800&yearTo=1900","status":200,"durationMs":1,"ip":"::1"}
+[2026-11-27 09:32:17] [INFO] HTTP {"method":"GET","url":"/api/books?sort=title","status":200,"durationMs":10,"ip":"::1"}
+[2026-11-27 09:32:17] [INFO] HTTP {"method":"GET","url":"/api/books?sort=-year","status":200,"durationMs":0,"ip":"::1"}
+[2026-11-27 09:32:17] [INFO] HTTP {"method":"GET","url":"/api/books?limit=5&page=2","status":200,"durationMs":0,"ip":"::1"}
+[2026-11-27 09:32:18] [INFO] HTTP {"method":"GET","url":"/api/books/stats","status":200,"durationMs":0,"ip":"::1"}
+[2026-11-27 09:32:18] [INFO] Создана книга {"book":{"id":13,"title":"Обломов","author":"Гончаров","year":1859,"genre":"роман"}}
+[2026-11-27 09:32:18] [INFO] HTTP {"method":"POST","url":"/api/books","status":201,"durationMs":6,"ip":"::1"}
+[2026-11-27 09:32:18] [INFO] HTTP {"method":"POST","url":"/api/books","status":409,"durationMs":1,"ip":"::1"}

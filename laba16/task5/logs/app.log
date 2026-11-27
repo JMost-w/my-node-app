@@ -1,0 +1,26 @@
+[2026-11-27 09:32:17] [INFO] HTTP {"method":"GET","url":"/api/books?year=1869","status":200,"durationMs":9,"ip":"::1"}
+[2026-11-27 09:32:17] [INFO] HTTP {"method":"GET","url":"/api/books?yearFrom=1800&yearTo=1900","status":200,"durationMs":1,"ip":"::1"}
+[2026-11-27 09:32:17] [INFO] HTTP {"method":"GET","url":"/api/books?sort=title","status":200,"durationMs":10,"ip":"::1"}
+[2026-11-27 09:32:17] [INFO] HTTP {"method":"GET","url":"/api/books?sort=-year","status":200,"durationMs":0,"ip":"::1"}
+[2026-11-27 09:32:17] [INFO] HTTP {"method":"GET","url":"/api/books?limit=5&page=2","status":200,"durationMs":0,"ip":"::1"}
+[2026-11-27 09:32:18] [INFO] HTTP {"method":"GET","url":"/api/books/stats","status":200,"durationMs":0,"ip":"::1"}
+[2026-11-27 09:32:18] [INFO] Создана книга {"book":{"id":13,"title":"Обломов","author":"Гончаров","year":1859,"genre":"роман"}}
+[2026-11-27 09:32:18] [INFO] HTTP {"method":"POST","url":"/api/books","status":201,"durationMs":6,"ip":"::1"}
+[2026-11-27 09:32:18] [INFO] HTTP {"method":"POST","url":"/api/books","status":409,"durationMs":1,"ip":"::1"}
+[2026-11-27 09:38:20] [INFO] Логин {"email":"admin@lib.com"}
+[2026-11-27 09:38:20] [INFO] HTTP {"method":"POST","url":"/auth/login","status":200,"durationMs":82,"ip":"::1"}
+[2026-11-27 09:38:20] [INFO] HTTP {"method":"GET","url":"/api/books","status":200,"durationMs":2,"ip":"::1"}
+[2026-11-27 09:38:20] [INFO] HTTP {"method":"GET","url":"/api/books/stats","status":200,"durationMs":1,"ip":"::1"}
+[2026-11-27 09:38:20] [INFO] Создана книга {"book":{"id":101,"title":"Обломов","author":"Гончаров","year":1859,"genre":"роман","totalCopies":3,"isbn":null,"reviews":[],"availableCopies":3}}
+[2026-11-27 09:38:20] [INFO] HTTP {"method":"POST","url":"/api/books","status":201,"durationMs":2,"ip":"::1"}
+[2026-11-27 09:38:20] [INFO] Добавлен отзыв {"bookId":1,"review":{"id":1,"readerName":"Вася","rating":5,"text":"Отлично!","createdAt":"2026-11-27T06:38:20.566Z"}}
+[2026-11-27 09:38:20] [INFO] HTTP {"method":"POST","url":"/api/books/1/reviews","status":201,"durationMs":1,"ip":"::1"}
+[2026-11-27 09:38:20] [INFO] HTTP {"method":"GET","url":"/api/books/export?format=csv","status":200,"durationMs":1,"ip":"::1"}
+[2026-11-27 09:38:22] [INFO] HTTP {"method":"GET","url":"/api-docs","status":301,"durationMs":5,"ip":"::1"}
+[2026-11-27 09:38:22] [INFO] HTTP {"method":"GET","url":"/api-docs/","status":200,"durationMs":7,"ip":"::1"}
+[2026-11-27 09:38:22] [INFO] HTTP {"method":"GET","url":"/api-docs/swagger-ui-init.js","status":200,"durationMs":7,"ip":"::1"}
+[2026-11-27 09:38:22] [INFO] HTTP {"method":"GET","url":"/api-docs/swagger-ui.css","status":200,"durationMs":22,"ip":"::1"}
+[2026-11-27 09:38:22] [INFO] HTTP {"method":"GET","url":"/api-docs/swagger-ui-standalone-preset.js","status":200,"durationMs":16,"ip":"::1"}
+[2026-11-27 09:38:22] [INFO] HTTP {"method":"GET","url":"/api-docs/swagger-ui-bundle.js","status":200,"durationMs":46,"ip":"::1"}
+[2026-11-27 09:38:22] [INFO] HTTP {"method":"GET","url":"/api-docs/favicon-32x32.png","status":200,"durationMs":2,"ip":"::1"}
+[2026-11-27 09:38:22] [INFO] HTTP {"method":"GET","url":"/api-docs/favicon-16x16.png","status":200,"durationMs":2,"ip":"::1"}

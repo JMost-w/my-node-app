@@ -1,0 +1,15 @@
+{
+  "name": "laba16-task4",
+  "version": "1.0.0",
+  "description": "Лабораторная работа №16 — Задание 4 (фильтры, пагинация, статистика)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Максим Мазан Борисович, группа 401, БТК",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "compression": "^1.7.4"
+  }
+}
