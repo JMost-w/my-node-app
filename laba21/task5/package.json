@@ -1,0 +1,11 @@
+{
+  "name": "laba21-pipeline",
+  "version": "1.0.0",
+  "description": "Лабораторная работа №21 — конвейер потоков с backpressure и мониторингом",
+  "main": "stream-pipeline.js",
+  "scripts": {
+    "start": "node stream-pipeline.js"
+  },
+  "author": "Максим Мазан Борисович, группа 401, БТК",
+  "license": "MIT"
+}
