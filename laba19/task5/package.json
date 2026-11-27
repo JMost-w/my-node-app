@@ -1,0 +1,12 @@
+{
+  "name": "laba19-eventbus",
+  "version": "1.0.0",
+  "description": "Лабораторная работа №19 — EventBus с приоритетами, wildcard и метриками",
+  "main": "event-bus-demo.js",
+  "scripts": {
+    "demo": "node event-bus-demo.js",
+    "server": "node server.js"
+  },
+  "author": "Максим Мазан Борисович, группа 401, БТК",
+  "license": "MIT"
+}
